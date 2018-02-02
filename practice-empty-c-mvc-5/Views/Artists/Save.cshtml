@@ -1,0 +1,26 @@
+﻿@model practice_empty_c_mvc_5.Models.artist
+
+<h2>Save</h2>
+@using (Html.BeginForm("save", "artists", FormMethod.Post, new { id = "popupForm" }))
+{
+    if (Model != null && Model.art_id > 0)
+    {
+        @Html.HiddenFor(a => a.art_id)
+    }
+
+    <div class="form-group">
+        <label>Nombre</label>
+        @Html.TextBoxFor(a => a.art_name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.art_name)
+    </div>
+
+    <div class="form-group">
+        <label>Nombre</label>
+        @Html.TextBoxFor(a => a.art_code, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.art_code)
+    </div>
+
+    <div>
+        <input type="submit" value="Guardar" />
+    </div>
+}

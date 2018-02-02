@@ -1,0 +1,14 @@
+﻿@model practice_empty_c_mvc_5.Models.artist
+
+<h2>Delete Artists</h2>
+@using (Html.BeginForm("delete", "artists", FormMethod.Post, new { id = "popupForm" }))
+{
+    @Html.HiddenFor(a=>a.art_id)
+    <div class="form-group">
+        <label>Artista</label>
+        <p>@Model.art_name</p>
+    </div>
+    <div>
+        <input type="submit" value="Eliminar" />
+    </div>
+}
